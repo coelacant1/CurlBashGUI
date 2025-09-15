@@ -2,7 +2,7 @@
  * Configuration and Setup
  *************************************************************************/
 const repoOwner = 'coelacant1';
-const repoName = 'ProxmoxScripts';
+const repoName = 'CurlBashGUI';
 const baseApiURL = `https://api.github.com/repos/${repoOwner}/${repoName}/contents`;
 const baseRawURL = `https://github.com/${repoOwner}/${repoName}/raw/main`;
 
@@ -254,7 +254,7 @@ scriptBtn.addEventListener('click', async () => {
 
 function createDownloadRepoBlock() {
     // Command to clone or download the repo
-    const command = `git clone https://github.com/coelacant1/ProxmoxScripts.git`;
+    const command = `git clone https://github.com/coelacant1/CurlBashGUI.git`;
   
     // Create a container
     const container = document.createElement('table');
@@ -388,7 +388,7 @@ async function renderContent(path = '') {
   }
 
   // List of scripts to exclude
-  const excludedScripts = ['MakeScriptsExecutable.sh', 'UpdateProxmoxScripts.sh', 'CCPVEOffline.sh'];
+  const excludedScripts = ['MakeScriptsExecutable.sh', 'UpdateScripts.sh', 'GUI.sh'];
 
   // Populate folders/files
   for (const item of visibleItems) {

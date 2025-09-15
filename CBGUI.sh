@@ -1,17 +1,17 @@
 #!/bin/bash
 #
-# CCPVE.sh
+# CBGUI.sh
 #
-# The main script to download and extract the ProxmoxScripts repository, then make all scripts
-# in the repository executable and finally call CCPVEOffline.sh.
+# The main script to download and extract the CurlBashGUI repository, then make all scripts
+# in the repository executable and finally call GUI.sh.
 #
 # Usage:
-#   ./CCPVE.sh [-nh]
+#   ./CBGUI.sh [-nh]
 #
 # This script requires 'unzip' and 'wget'. If not installed, it will prompt to install them.
 #
 # Example:
-#   bash -c "$(wget -qLO - https://github.com/coelacant1/ProxmoxScripts/raw/main/CCPVE.sh)"
+#   bash -c "$(wget -qLO - https://github.com/coelacant1/CurlBashGUI/raw/main/CBGUI.sh)"
 #
 
 set -e
@@ -57,8 +57,8 @@ if ! command -v wget &>/dev/null; then
 fi
 
 # --- Configuration ----------------------------------------------------------
-REPO_ZIP_URL="https://github.com/coelacant1/ProxmoxScripts/archive/refs/heads/main.zip"
-TARGET_DIR="/tmp/cc_pve"
+REPO_ZIP_URL="https://github.com/coelacant1/CurlBashGUI/archive/refs/heads/main.zip"
+TARGET_DIR="/tmp/cbgui"
 
 # --- Download and Extract ---------------------------------------------------
 rm -rf "$TARGET_DIR"

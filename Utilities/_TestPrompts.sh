@@ -20,10 +20,6 @@ echo "=== TEST: __check_root__ ==="
 __check_root__
 
 echo
-echo "=== TEST: __check_proxmox__ ==="
-__check_proxmox__
-
-echo
 echo "=== TEST: __install_or_prompt__ (curl) ==="
 __install_or_prompt__ "curl"
 

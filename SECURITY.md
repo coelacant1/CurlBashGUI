@@ -1,6 +1,6 @@
 # Security Policy
 
-This repository contains Bash scripts used for Proxmox management and automation. We take security issues seriously and appreciate any reports that help us maintain a secure and reliable environment.
+This repository contains Bash scripts used as a backbone for GUI script calling and automation. We take security issues seriously and appreciate any reports that help us maintain a secure and reliable environment.
 
 ## Supported Versions
 
@@ -25,7 +25,7 @@ We will make every effort to:
 ## Scope and Expectations
 
 - **Scope**: This policy covers potential security issues within the bash scripts (e.g., command injection, privilege escalation, or insecure storage of credentials).
-- **Out of Scope**: Vulnerabilities in external Proxmox environments, third-party dependencies, or issues related to general system administration (outside the repository) are not handled within this policy. However, we may provide guidance or mitigation strategies if they relate to this project.
+- **Out of Scope**: Vulnerabilities in external linux environments, third-party dependencies, or issues related to general system administration (outside the repository) are not handled within this policy. However, we may provide guidance or mitigation strategies if they relate to this project.
 
 ## Handling Confidential Information
 
@@ -33,4 +33,4 @@ Users should avoid committing or sharing any sensitive data (tokens, passwords, 
 
 ## Thank You
 
-We appreciate your efforts in responsibly disclosing security issues and helping to keep our Proxmox automation scripts secure. If you have any questions or concerns, please contact us at the email address above.
+We appreciate your efforts in responsibly disclosing security issues and helping to keep our repository secure. If you have any questions or concerns, please contact us at the email address above.

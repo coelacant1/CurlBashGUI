@@ -100,11 +100,6 @@ Usage: __check_root__
 Example Output: If not run as root, the output is: "Error: This script must be run as root (sudo)."  
 Output: Exits 1 if not root.
 
-Prompts.sh/__check_proxmox__: Checks if this is a Proxmox node.  
-Usage: __check_proxmox__  
-Example Output: If 'pveversion' is not found, the output is: "Error: 'pveversion' command not found. Are you sure this is a Proxmox node?"  
-Output: Exits 2 if not Proxmox.
-
 Prompts.sh/__install_or_prompt__: Checks if a specified command is available.  
 Usage: __install_or_prompt__ <command_name>  
 Example Output: If "curl" is missing and the user declines installation, the output is: "Aborting script because 'curl' is not installed."  
@@ -114,63 +109,6 @@ Prompts.sh/__prompt_keep_installed_packages__: Prompts the user whether to keep 
 Usage: __prompt_keep_installed_packages__  
 Example Output: If the user chooses "No", the output is: "Removing the packages installed in this session..." followed by "Packages removed."  
 Output: Removes packages if user says "No", otherwise does nothing.
-
-## Queries.sh
-
-Queries.sh/__get_remote_node_ips__: Gathers IPs for all cluster nodes (excluding local) from 'pvecm status'.  
-Usage: readarray -t REMOTE_NODES < <( __get_remote_node_ips__ )  
-Example Output: Given pvecm status output with remote IPs, the function might output: 192.168.1.2 192.168.1.3  
-Output: Prints each remote node IP on a separate line to stdout.
-
-Queries.sh/__check_cluster_membership__: Checks if the node is recognized as part of a cluster by examining 'pvecm status'.  
-Usage: __check_cluster_membership__  
-Example Output: If the node is in a cluster, the output is: Node is in a cluster named: MyClusterName  
-Output: Exits 3 if the node is not in a cluster (according to pvecm).
-
-Queries.sh/__get_number_of_cluster_nodes__: Returns the total number of nodes in the cluster by counting lines matching a numeric ID from `pvecm nodes`.  
-Usage: local num_nodes=$(__get_number_of_cluster_nodes__)  
-Example Output: If there are 3 nodes in the cluster, the output is: 3  
-Output: Prints the count of cluster nodes to stdout.
-
-Queries.sh/__init_node_mappings__: Parses `pvecm status` and `pvecm nodes` to build internal maps: NODEID_TO_IP[nodeid]   -> IP, NODEID_TO_NAME[nodeid] -> Name, then creates: NAME_TO_IP[name] -> IP and IP_TO_NAME[ip] -> name.  
-Usage: __init_node_mappings__  
-Example Output: No direct output; internal mappings are initialized for later queries.  
-Output: Populates the associative arrays with node information.
-
-Queries.sh/__get_ip_from_name__: Given a node’s name (e.  
-Usage: __get_ip_from_name__ "pve03"  
-Example Output: For __get_ip_from_name__ "pve03", the output is: 192.168.83.23  
-Output: Prints the IP to stdout or exits 1 if not found.
-
-Queries.sh/__get_name_from_ip__: Given a node’s link0 IP (e.  
-Usage: __get_name_from_ip__ "172.20.83.23"  
-Example Output: For __get_name_from_ip__ "172.20.83.23", the output is: pve03  
-Output: Prints the node name to stdout or exits 1 if not found.
-
-Queries.sh/__get_cluster_lxc__: Retrieves the VMIDs for all LXC containers across the entire cluster.  
-Usage: readarray -t ALL_CLUSTER_LXC < <( __get_cluster_lxc__ )  
-Example Output: The function may output: 101 102  
-Output: Prints each LXC VMID on a separate line.
-
-Queries.sh/__get_server_lxc__: Retrieves the VMIDs for all LXC containers on a specific server.  
-Usage: readarray -t NODE_LXC < <( __get_server_lxc__ "local" )  
-Example Output: For __get_server_lxc__ "local", the output might be: 201 202  
-Output: Prints each LXC VMID on its own line.
-
-Queries.sh/__get_cluster_vms__: Retrieves the VMIDs for all VMs (QEMU) across the entire cluster.  
-Usage: readarray -t ALL_CLUSTER_VMS < <( __get_cluster_vms__ )  
-Example Output: The function may output: 301 302  
-Output: Prints each QEMU VMID on a separate line.
-
-Queries.sh/__get_server_vms__: Retrieves the VMIDs for all VMs (QEMU) on a specific server.  
-Usage: readarray -t NODE_VMS < <( __get_server_vms__ "local" )  
-Example Output: For __get_server_vms__ "local", the output might be: 401 402  
-Output: Prints each QEMU VMID on its own line.
-
-Queries.sh/get_ip_from_vmid: Retrieves the IP address of a VM by using its net0 MAC address for an ARP scan on the default interface (vmbr0).  
-Usage: get_ip_from_vmid 100  
-Example Output: For get_ip_from_vmid 100, the output might be: 192.168.1.100  
-Output: Prints the discovered IP or exits 1 if not found.
 
 ## SSH.sh
 

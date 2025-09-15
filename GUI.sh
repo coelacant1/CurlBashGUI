@@ -33,7 +33,7 @@ set -e
 ###############################################################################
 
 BASE_DIR="$(pwd)"       # We assume the script is run from the unzipped directory
-DISPLAY_PREFIX="cc_pve" # How we display the "root" in the UI
+DISPLAY_PREFIX="cbgui"  # How we display the "root" in the UI
 HELP_FLAG="--help"      # If your scripts support a help flag, we pass this
 LAST_SCRIPT=""          # The last script run
 LAST_OUTPUT=""          # Truncated output of the last script
@@ -86,7 +86,7 @@ LARGE_ASCII=$(cat <<'EOF'
     ╚═╝       ╚═══╝  ╚══════╝    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚══════╝    
                                                                                          
 -----------------------------------------------------------------------------------------
-   User Interface for ProxmoxScripts                                                     
+   User Interface for CurlBashGUI                                                     
    Author: Coela Can't! (coelacant1)                                                     
 -----------------------------------------------------------------------------------------
 EOF
@@ -104,7 +104,7 @@ SMALL_ASCII=$(cat <<'EOF'
  █▀▀ ▀▄▀ █▀▀    ▀▀█ █   █▀▄  █  █▀▀  █  ▀▀█ 
  ▀    ▀  ▀▀▀    ▀▀▀ ▀▀▀ ▀ ▀ ▀▀▀ ▀    ▀  ▀▀▀ 
 --------------------------------------------
-  ProxmoxScripts UI                         
+  CurlBashGUI UI                         
   Author: Coela Can't! (coelacant1)         
 --------------------------------------------
 EOF

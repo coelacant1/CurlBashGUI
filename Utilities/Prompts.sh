@@ -2,28 +2,25 @@
 #
 # Prompts.sh
 #
-# Provides functions for user interaction and prompts (e.g., checking root permissions, verifying Proxmox environment, installing packages on demand).
+# Provides functions for user interaction and prompts (e.g., checking root permissions, installing packages on demand).
 #
 # Usage:
 #   source ./Prompts.sh
 #
 #   # Then call its functions, for example:
 #   __check_root__
-#   __check_proxmox__
 #   __install_or_prompt__ "curl"
 #   __prompt_keep_installed_packages__
 #
 # Examples:
-#   # Example: Check root and Proxmox status, then install curl:
+#   # Example: Check root, then install curl:
 #   source ./Prompts.sh
 #   __check_root__
-#   __check_proxmox__
 #   __install_or_prompt__ "curl"
 #   __prompt_keep_installed_packages__
 #
 # Function Index:
 #   - __check_root__
-#   - __check_proxmox__
 #   - __install_or_prompt__
 #   - __prompt_keep_installed_packages__
 #
@@ -48,19 +45,6 @@ __check_root__() {
     if [[ $EUID -ne 0 ]]; then
         echo "Error: This script must be run as root (sudo)."
         exit 1
-    fi
-}
-
-# --- __check_proxmox__ ------------------------------------------------------------
-# @function __check_proxmox__
-# @description Checks if this is a Proxmox node. Exits if not.
-# @usage __check_proxmox__
-# @return Exits 2 if not Proxmox.
-# @example_output If 'pveversion' is not found, the output is: "Error: 'pveversion' command not found. Are you sure this is a Proxmox node?"
-__check_proxmox__() {
-    if ! command -v pveversion &>/dev/null; then
-        echo "Error: 'pveversion' command not found. Are you sure this is a Proxmox node?"
-        exit 2
     fi
 }
 

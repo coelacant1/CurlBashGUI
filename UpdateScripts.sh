@@ -10,7 +10,7 @@
 
 # Variables
 REPO_URL="https://github.com/coelacant1/CurlBashGUI"
-REPO_NAME="proxmoxscripts"
+REPO_NAME="curlbashgui"
 
 # Ensure the script is run with root or equivalent permissions
 if [ "$EUID" -ne 0 ]; then

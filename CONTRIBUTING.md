@@ -1,12 +1,12 @@
 # Contributing Guide
 
-Thank you for your interest in contributing to this repository! We appreciate your help in improving and expanding our bash scripts for Proxmox management and automation. Below are the guidelines and best practices we ask all contributors to follow.
+Thank you for your interest in contributing to this repository! We appreciate your help in improving and expanding our bash GUI for script automation. Below are the guidelines and best practices we ask all contributors to follow.
 
 ---
 
 ## 1. Project Scope
 
-This repository contains Bash scripts (`.sh` files) that help automate and manage Proxmox tasks. The goal is to maintain a clean, consistent, and secure set of scripts that are easy to understand and extend.
+This repository contains Bash scripts (`.sh` files) that help describe and run scripts. The goal is to maintain a clean, consistent, and secure set of scripts that are easy to understand and extend.
 
 ---
 
@@ -128,7 +128,7 @@ echo "CLUSTER_IP is: $CLUSTER_IP"
    - Address feedback promptly and be open to revising your approach.
 
 4. **Testing**  
-   - Test your script in a test or sandbox environment (especially for Proxmox clusters).  
+   - Test your script in a test or sandbox environment.  
    - Document any steps to reproduce your tests.
 
 ---

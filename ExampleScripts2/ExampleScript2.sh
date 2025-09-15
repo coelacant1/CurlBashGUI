@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# _ExampleScript.sh
+# _ExampleScript2.sh
 #
 # Demonstrates usage of the included spinner and message functions.
 #
 # Usage:
-#   ./_ExampleScript.sh <text1> <text2>
+#   ./_ExampleScript2.sh <text1> <text2>
 #
 #
 # This script simulates a process, updates its status, and then shows success and error messages.
@@ -24,7 +24,7 @@ __install_or_prompt__ "jq"
 ###############################################################################
 if [ $# -lt 2 ]; then
   echo "Error: Insufficient arguments."
-  echo "Usage: ./_ExampleScript.sh <text1> <text2>"
+  echo "Usage: ./_ExampleScript2.sh <text1> <text2>"
   exit 1
 fi
 
